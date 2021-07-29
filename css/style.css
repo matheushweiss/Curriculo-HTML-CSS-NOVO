@@ -56,7 +56,7 @@ header .coluna img{
 
 header .coluna h1{
   font-size: 1.5rem;
-    color: var(--CorSecundaria);
+    color: var(--CorTextoPrincipal);
 }
 
 header .coluna p{
@@ -81,6 +81,8 @@ main .coluna{
  padding: 20px;
 }
 
+
+
 main .coluna section{
   border-bottom: 1px solid #d4e9ff;
   margin: 0 0 20px;
@@ -91,6 +93,7 @@ main .coluna section{
 main .coluna section h2{
   font-size: 1.3rem;
   margin: 0 0 15px;
+  color: #000
 }
 
 main .coluna section p{
@@ -105,6 +108,7 @@ main .coluna section ul li{
 
 main .coluna section ul li h3{
   font-size: 1.1rem;
+  color: #000;
 }
 
 main .coluna section ul li strong{
@@ -113,6 +117,8 @@ main .coluna section ul li strong{
   margin: 5px 0 10px;
   display: inline-block;
 }
+
+
 
 footer{
     background-color: var(--CorSecundaria);
@@ -172,6 +178,86 @@ box-sizing: border-box;
 cursor: pointer;
   }
 
+  label span{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: var(--CorAuxiliar);
+    border-radius: 100%;
+    transition: .2s;
+  }
+
+.ativar-dark:checked ~ .dark-mode label{
+  background-color: #fff ;
+}
+
+.ativar-dark:checked ~ .dark-mode label span{
+background-color: ;
+margin-left: 16px;
+transition: .2s;
+}
+
+.ativar-dark:checked ~ .dark-mode{
+  --CorPrincipal:#000000;
+  --CorSecundaria:rgb(24, 24, 24);
+  --CorTextoPrincipal:rgb(10, 119, 101);
+  --CorTextoSecundario:#8a8a8a;
+  --CorAuxiliar:rgb(82, 81, 81);
+
+}
+
+.ativar-dark:checked ~ .dark-mode header{
+  background-color: var(--CorPrincipal)
+}
+
+.ativar-dark:checked ~ .dark-mode .container{
+  background-color: var(--CorSecundaria);
+}
+.ativar-dark:checked ~ .dark-mode main{
+  background-color: var(--CorPrincipal);
+}
+.ativar-dark:checked ~ .dark-mode footer{
+  background-color: var(--CorPrincipal);
+}
+
+.ativar-dark:checked ~ .dark-mode h2{
+  color: var(--CorTextoPrincipal);
+}
+
+.ativar-dark:checked ~ .dark-mode h3{
+  color: var(--CorTextoPrincipal);
+}
+.ativar-dark:checked ~ .dark-mode p{
+  color: var(--CorTextoSecundario);
+  
+}
+.ativar-dark:checked ~ .dark-mode li{
+  color: var(--CorTextoSecundario);
+}
+.ativar-dark:checked ~ .dark-mode strong{
+  color: var(--CorAuxiliar);
+  font-weight: bold;
+}
+
+@keyframes aumentarLargura{
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
+  
+@keyframes aumentarAltura{
+  from{
+    height: 0;
+  }
+  to{
+    height: 100%;
+  }
+}
+  
+
 
 /* @MEDIA */
 @media only screen and (min-width: 768px){
@@ -213,6 +299,61 @@ cursor: pointer;
       position: relative;
     }
     
+    main .coluna section span{
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border: 2px solid transparent;
+    }
+
+    main .coluna section .topo-direita{
+
+      top: -2px;
+
+      left: -2px;
+
+      animation-name: aumentarLargura, aumentarAltura;
+
+      animation-duration: 1s, 1s;
+
+      animation-delay: 2s, 3s;
+
+      animation-fill-mode: forwards;
+
+      border-top-color: rgb(10, 119, 101);
+
+      border-right-color: rgb(10, 119, 101);
+
+    }
+
+
+
+    main .coluna section .baixo-esquerda{
+
+      bottom: -2px;
+
+      right: -2px;
+
+      animation-name: aumentarLargura, aumentarAltura;
+
+      animation-duration: 1s, 1s;
+
+      animation-delay: 4s, 5s;
+
+      animation-fill-mode: forwards;
+
+      border-bottom-color: rgb(10, 119, 101);
+
+      border-left-color: rgb(10, 119, 101);
+
+    }
+
+
+  
+
+
+
     main .coluna{
         padding: 0;
     }
